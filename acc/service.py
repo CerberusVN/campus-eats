@@ -2,4 +2,8 @@ USERS = []
 
 
 def register(email):
-    raise NotImplementedError("FR-ACC-001")
+    """FR-ACC-001: register a user with a unique email."""
+    if email in USERS:
+        raise ValueError("Email already registered")
+    USERS.append(email)
+    return email
