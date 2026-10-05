@@ -19,3 +19,8 @@ class TestCreateOrder(unittest.TestCase):
         get_item.return_value = fake_item(stock=1)
         with self.assertRaises(ValueError):
             create_order(1, 2)
+
+    @patch("ord.service.get_item")
+    def test_total_is_price_times_quantity(self, get_item):
+        get_item.return_value = fake_item(stock=10)
+        self.assertEqual(create_order(1, 2)["total"], 90000)
