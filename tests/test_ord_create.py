@@ -5,7 +5,7 @@ from ord.service import create_order
 
 def fake_item(stock):
     # stub of MENU.get_item, written before MENU was finished
-    return {"id": 1, "name": "Pho bo", "unit_price": 45000, "stock": stock}
+    return {"id": 1, "name": "Pho bo", "price": 45000, "stock": stock}
 
 
 class TestCreateOrder(unittest.TestCase):
