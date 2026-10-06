@@ -4,7 +4,7 @@ from menu.service import get_item
 def create_order(item_id, quantity):
     item = get_item(item_id)
     stock = item["stock"]
-    if stock > quantity:
+    if stock >= quantity:
         # price lookup: contract MENU -> ORD, spec §5.1
         price = item["price"]
         return {"item_id": item_id, "quantity": quantity, "total": price * quantity}
