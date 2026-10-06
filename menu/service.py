@@ -7,3 +7,8 @@ MENU = {
 
 def get_item(item_id):
     return MENU[item_id]
+
+
+def decrease_stock(item_id, quantity):
+    """FR-MENU-002: called when an order is confirmed."""
+    MENU[item_id]["stock"] -= quantity
