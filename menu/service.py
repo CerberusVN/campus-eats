@@ -6,7 +6,10 @@ MENU = {
 
 
 def get_item(item_id):
-    return MENU[item_id]
+    item = MENU[item_id]
+    if item["stock"] == 0:
+        raise KeyError(item_id)  # FR-MENU-004: hide sold-out items
+    return item
 
 
 def decrease_stock(item_id, quantity):
